@@ -1,7 +1,11 @@
 package com.luv2code.springdemo.mvc;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Locale;
 
 @Controller
 public class HelloWorldController {
@@ -11,6 +15,14 @@ public class HelloWorldController {
     }
     @RequestMapping("/processForm")
     public String processForm(){
+        return "helloworld";
+    }
+    @RequestMapping("/shoutAloudVersionTwo")
+    public String shoutAloudVersionTwo(HttpServletRequest request, Model model){
+        String name = request.getParameter("studentName");
+        name=name.toUpperCase();
+        String result = "Yo "+name.toUpperCase();
+        model.addAttribute("message",result);
         return "helloworld";
     }
 }
