@@ -21,7 +21,7 @@ public class HelloWorldController {
     public String shoutAloudVersionTwo(HttpServletRequest request, Model model){
         String name = request.getParameter("studentName");
         name=name.toUpperCase();
-        String result = "Yo "+name.toUpperCase();
+        String result = "Yo! "+name.toUpperCase();
         model.addAttribute("message",result);
         return "helloworld";
     }
