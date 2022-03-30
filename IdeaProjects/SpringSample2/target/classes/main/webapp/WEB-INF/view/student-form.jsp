@@ -7,12 +7,21 @@
 <body>
     <form:form action="processForm" modelAttribute="student">
         First Name: <form:input path = "firstName" />
+        <br><br>
         LastName: <form:input path="lastName" />
+        <br><br>
         Country:
         <form:select path="country">
         <form:options items="${student.countryOptions}"/>
         </form:select>
+        <br><br>
+        Favourite programming languages:
+        Java <form:radiobutton path="favouriteLanguage" value="Java" />
+        C# <form:radiobutton path="favouriteLanguage" value="C#" />
+        PHP <form:radiobutton path="favouriteLanguage" value="PHP" />
+        Ruby <form:radiobutton path="favouriteLanguage" value="Ruby" />
         <input type="submit" value="Submit" />
+
     </form:form>
 </body>
 </html>
